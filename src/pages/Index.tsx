@@ -146,7 +146,7 @@ function Index() {
       <main className="container px-4 py-8">
         {activeTab === 'catalog' && (
           <div>
-            <div className="relative h-[400px] rounded-lg overflow-hidden mb-8" style={{backgroundImage: `url(https://cdn.poehali.dev/projects/30fe9c76-ca6f-4041-a86b-32b1ad751e60/files/6f53dd88-6218-45ef-928a-524e8d2fcc66.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+            <div className="relative h-[400px] rounded-lg overflow-hidden mb-8" style={{backgroundImage: `url(https://cdn.poehali.dev/files/123.png)`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
               <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 flex items-center">
                 <div className="max-w-2xl px-8">
                   <h2 className="text-5xl font-bold text-white mb-4">Винтажные виниловые пластинки</h2>
@@ -369,7 +369,7 @@ function Index() {
               <Icon name="Disc3" size={24} className="text-primary" />
               <span className="font-bold">Vinyl Kingdom</span>
             </div>
-            <p className="text-sm text-muted-foreground">© 2024 Vinyl Kingdom. Все права защищены.</p>
+            <p className="text-sm text-muted-foreground">© 2026 Vinyl Kingdom. Все права защищены.</p>
             <div className="flex gap-4">
               <Button variant="ghost" size="icon">
                 <Icon name="Instagram" size={20} />
