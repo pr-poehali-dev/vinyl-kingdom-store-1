@@ -17,6 +17,19 @@ interface Album {
   condition: string;
 }
 
+interface Staff {
+  id: number;
+  name: string;
+  position: string;
+  description: string;
+}
+
+const staff: Staff[] = [
+  { id: 1, name: "Михаил Виниловский", position: "Главный специалист по винилу", description: "Собирает пластинки более 20 лет. Знает все о легендарных альбомах 70-80х и может часами рассказывать истории о каждой записи." },
+  { id: 2, name: "Анна Мелодина", position: "Эксперт по оценке состояния", description: "Профессионально оценивает состояние винила по международной системе градации. Гарантирует подлинность и качество каждой пластинки." },
+  { id: 3, name: "Дмитрий Звуков", position: "Консультант по жанрам", description: "Специалист по рок, соул и диско музыке. Поможет подобрать идеальные альбомы для вашей коллекции и расскажет о редких изданиях." },
+];
+
 const albums: Album[] = [
   { id: 1, title: "Dark Side of the Moon", artist: "Pink Floyd", year: 1973, genre: "Rock", price: 2500, image: "https://cdn.poehali.dev/projects/30fe9c76-ca6f-4041-a86b-32b1ad751e60/files/7657c786-959e-4706-97de-15026fdb801a.jpg", condition: "Mint" },
   { id: 2, title: "Rumours", artist: "Fleetwood Mac", year: 1977, genre: "Rock", price: 2200, image: "https://cdn.poehali.dev/projects/30fe9c76-ca6f-4041-a86b-32b1ad751e60/files/1d461d7d-93f5-4f3b-88d3-aeae6dafc9e6.jpg", condition: "VG+" },
@@ -72,6 +85,9 @@ function Index() {
             </button>
             <button onClick={() => setActiveTab('about')} className={`text-sm font-medium transition-colors hover:text-primary ${activeTab === 'about' ? 'text-primary' : 'text-muted-foreground'}`}>
               О магазине
+            </button>
+            <button onClick={() => setActiveTab('staff')} className={`text-sm font-medium transition-colors hover:text-primary ${activeTab === 'staff' ? 'text-primary' : 'text-muted-foreground'}`}>
+              Персонал
             </button>
             <button onClick={() => setActiveTab('contacts')} className={`text-sm font-medium transition-colors hover:text-primary ${activeTab === 'contacts' ? 'text-primary' : 'text-muted-foreground'}`}>
               Контакты
@@ -283,6 +299,25 @@ function Index() {
                   <p>Более 15 лет опыта работы с винтажными пластинками</p>
                 </Card>
               </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'staff' && (
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6">Наша команда</h2>
+            <p className="text-lg text-muted-foreground mb-8">Познакомьтесь с экспертами Vinyl Kingdom — настоящими ценителями винила</p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {staff.map(member => (
+                <Card key={member.id} className="p-6 hover:shadow-lg transition-shadow">
+                  <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Icon name="User" size={48} className="text-primary" />
+                  </div>
+                  <h3 className="font-bold text-xl text-center mb-2">{member.name}</h3>
+                  <p className="text-primary text-center font-medium mb-3">{member.position}</p>
+                  <p className="text-sm text-muted-foreground text-center">{member.description}</p>
+                </Card>
+              ))}
             </div>
           </div>
         )}
