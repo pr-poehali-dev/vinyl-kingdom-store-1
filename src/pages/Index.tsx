@@ -75,9 +75,12 @@ function Index() {
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
         <div className="container flex h-16 items-center justify-between px-4">
-          <div className="flex items-center gap-3">
-            <Icon name="Disc3" size={32} className="text-primary" />
-            <h1 className="text-2xl font-bold text-primary">Vinyl Kingdom</h1>
+          <div className="flex items-center">
+            <img 
+              src="https://cdn.poehali.dev/files/logoza.ru.png" 
+              alt="Vinyl Vault" 
+              className="h-12 w-auto object-contain"
+            />
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <button onClick={() => setActiveTab('catalog')} className={`text-sm font-medium transition-colors hover:text-primary ${activeTab === 'catalog' ? 'text-primary' : 'text-muted-foreground'}`}>
@@ -365,11 +368,14 @@ function Index() {
       <footer className="border-t mt-16 py-8 bg-card">
         <div className="container px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Icon name="Disc3" size={24} className="text-primary" />
-              <span className="font-bold">Vinyl Kingdom</span>
+            <div className="flex items-center">
+              <img 
+                src="https://cdn.poehali.dev/files/logoza.ru.png" 
+                alt="Vinyl Vault" 
+                className="h-8 w-auto object-contain"
+              />
             </div>
-            <p className="text-sm text-muted-foreground">© 2024 Vinyl Kingdom. Все права защищены.</p>
+            <p className="text-sm text-muted-foreground">© 2024 Vinyl Vault. Все права защищены.</p>
             <div className="flex gap-4">
               <Button variant="ghost" size="icon">
                 <Icon name="Instagram" size={20} />
